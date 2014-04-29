@@ -1,206 +1,180 @@
 <!DOCTYPE html>
-<html><head>
-    <title>MisterJa★亚洲精选</title>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="generator" content="nopCommerce">
-    
-    
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+	<title>MisterJa★亚洲精选</title>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="generator" content="nopCommerce">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href="md/styles.css" rel="stylesheet" type="text/css">
+	<link href="md/responsive.css" rel="stylesheet" type="text/css">
+	<link href="md/jquery-ui-1.css" rel="stylesheet" type="text/css">
+	<link href="md/nivo-slider.css" rel="stylesheet" type="text/css">
+	<link href="md/default.css" rel="stylesheet" type="text/css">
+	<link href="md/index.css" rel="stylesheet" type="text/css">
+	<script src="md/sngopg43acbqcfnyxutx2lusw3jtnm47gptcyqgofky1.js"></script>
 
-    
-    <link href="md/styles.css" rel="stylesheet" type="text/css">
-<link href="md/responsive.css" rel="stylesheet" type="text/css">
-<link href="md/jquery-ui-1.css" rel="stylesheet" type="text/css">
-<link href="md/nivo-slider.css" rel="stylesheet" type="text/css">
-<link href="md/default.css" rel="stylesheet" type="text/css">
-
-    <script src="md/sngopg43acbqcfnyxutx2lusw3jtnm47gptcyqgofky1.js"></script>
-
-
-    
-    
-    
-    
-    
-<link rel="shortcut icon" href="http://www.misterja.com:90/favicon.ico">
+	<link rel="shortcut icon" href="http://www.misterja.com:90/favicon.ico">
     <!--Powered by nopCommerce - http://www.nopCommerce.com-->
     <!--Copyright (c) 2008-2013-->
 </head>
 <body>
     
-
-
 <div id="dialog-notifications-success" title="通知" style="display:none;">
 </div>
 <div id="dialog-notifications-error" title="错误" style="display:none;">
 </div>
 <div id="bar-notification" class="bar-notification">
-    <span class="close" title="关闭">&nbsp;</span>
+		<span class="close" title="关闭">&nbsp;</span>
 </div>
-
-
-
-<div class="master-wrapper-page">
+<div class="master-wrapper-page">  
+	<div class="master-wrapper-content">
+		<script type="text/javascript">
+				AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart');
+		</script>
+		<div class="header">
+			<div class="header-logo">
+				<a href="http://www.misterja.com:90/zh/">		
+					<img title="" alt="" src="md/logo.gif">
+				</a>
+    	</div>
+			
+			<div class="header-links-wrapper">
+				<div class="header-links">
+					<ul>			
+						<li><a href="http://www.misterja.com:90/zh/register" class="ico-register">注册</a></li>
+						<li><a href="http://www.misterja.com:90/zh/login" class="ico-login">登录</a></li>
+						<li id="topcartlink">
+							<a href="http://www.misterja.com:90/zh/cart" class="ico-cart">
+									<span class="cart-label">购物车</span>
+									<span class="cart-qty">(0)</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.misterja.com:90/zh/wishlist" class="ico-wishlist">
+									<span class="cart-label">收藏夹</span>
+									<span class="wishlist-qty">(0)</span>
+							</a>
+						</li>			
+					</ul>
+					<script type="text/javascript">
+							$(document).ready(function () {
+									$('.header').on('mouseenter', '#topcartlink', function () {
+											$('#flyout-cart').addClass('active');
+									});
+									$('.header').on('mouseleave', '#topcartlink', function () {
+											$('#flyout-cart').removeClass('active');
+									});
+									$('.header').on('mouseenter', '#flyout-cart', function () {
+											$('#flyout-cart').addClass('active');
+									});
+									$('.header').on('mouseleave', '#flyout-cart', function () {
+											$('#flyout-cart').removeClass('active');
+									});
+							});
+					</script>
+				</div> <!-- div class header-links -->
+					
+				<div id="flyout-cart" class="flyout-cart">
+					<div class="mini-shopping-cart">
+						<div class="count">购物车中没有商品</div>
+						</div>
+					</div>
+    		</div>
+				
+    		<div class="search-box">
+					<form novalidate="novalidate" action="/zh/search" method="get" onSubmit="return check_small_search_form()">    <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input class="search-box-text ui-autocomplete-input" id="small-searchterms" autocomplete="off" value="站内搜索" name="q" onFocus="if(this.value=='站内搜索')this.value=''" onBlur="if(this.value=='') {this.value = '站内搜索';}" type="text">
+    			<input class="button-1 search-box-button" value="搜索" type="submit">
+					<script type="text/javascript">
+			
+							function check_small_search_form() {
+									var search_terms = $("#small-searchterms");
+									if (search_terms.val() == "") {
+											alert('请输入关键字');
+											search_terms.focus();
+											return false;
+									}
+			
+									return true;
+							}
+											
+							$(function () {
+									$('#small-searchterms').autocomplete({
+											delay: 500,
+											minLength: 2,
+											source: '/zh/catalog/searchtermautocomplete',
+											select: function( event, ui ) {
+													$("#small-searchterms").val(ui.item.label);
+													setLocation(ui.item.producturl);
+													return false;
+											}
+									})
+													.data("ui-autocomplete")._renderItem = function( ul, item ) {
+															var t = item.label;
+															//html encode
+															t = htmlEncode(t);
+															return $("<li></li>")
+															.data("item.autocomplete", item)
+															.append("<a>" + t + "</a>")
+													.appendTo(ul);
+													};
+							});
+							
+					</script>
+					</form>
+    		</div> <!-- div class search-box -->
     
-    <div class="master-wrapper-content">
-        <script type="text/javascript">
-            AjaxCart.init(false, '.header-links .cart-qty', '.header-links .wishlist-qty', '#flyout-cart');
-        </script>
-        
-
-<div class="header">
-    
-    <div class="header-logo">
-        <a href="http://www.misterja.com:90/zh/">
-            <img title="" alt="" src="md/logo.gif">
-        </a>
-    </div>
-    <div class="header-links-wrapper">
-        <div class="header-links">
-    <ul>
-        
-            <li><a href="http://www.misterja.com:90/zh/register" class="ico-register">注册</a></li>
-            <li><a href="http://www.misterja.com:90/zh/login" class="ico-login">登录</a></li>
-                            <li id="topcartlink">
-                <a href="http://www.misterja.com:90/zh/cart" class="ico-cart">
-                    <span class="cart-label">购物车</span>
-                    <span class="cart-qty">(0)</span>
-                </a>
-            </li>
-                    <li>
-                <a href="http://www.misterja.com:90/zh/wishlist" class="ico-wishlist">
-                    <span class="cart-label">收藏夹</span>
-                    <span class="wishlist-qty">(0)</span>
-                </a>
-            </li>
-        
-    </ul>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('.header').on('mouseenter', '#topcartlink', function () {
-                    $('#flyout-cart').addClass('active');
-                });
-                $('.header').on('mouseleave', '#topcartlink', function () {
-                    $('#flyout-cart').removeClass('active');
-                });
-                $('.header').on('mouseenter', '#flyout-cart', function () {
-                    $('#flyout-cart').addClass('active');
-                });
-                $('.header').on('mouseleave', '#flyout-cart', function () {
-                    $('#flyout-cart').removeClass('active');
-                });
-            });
-        </script>
-</div>
-
-        <div id="flyout-cart" class="flyout-cart">
-    <div class="mini-shopping-cart">
-        <div class="count">
-购物车中没有商品        </div>
-    </div>
-</div>
-
-    </div>
-    <div class="search-box">
-        <form novalidate="novalidate" action="/zh/search" method="get" onsubmit="return check_small_search_form()">    <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input class="search-box-text ui-autocomplete-input" id="small-searchterms" autocomplete="off" value="站内搜索" name="q" onfocus="if(this.value=='站内搜索')this.value=''" onblur="if(this.value=='') {this.value = '站内搜索';}" type="text">
-    <input class="button-1 search-box-button" value="搜索" type="submit">
-    <script type="text/javascript">
-
-        function check_small_search_form() {
-            var search_terms = $("#small-searchterms");
-            if (search_terms.val() == "") {
-                alert('请输入关键字');
-                search_terms.focus();
-                return false;
-            }
-
-            return true;
-        }
-                
-        $(function () {
-            $('#small-searchterms').autocomplete({
-                delay: 500,
-                minLength: 2,
-                source: '/zh/catalog/searchtermautocomplete',
-                select: function( event, ui ) {
-                    $("#small-searchterms").val(ui.item.label);
-                    setLocation(ui.item.producturl);
-                    return false;
-                }
-            })
-                    .data("ui-autocomplete")._renderItem = function( ul, item ) {
-                        var t = item.label;
-                        //html encode
-                        t = htmlEncode(t);
-                        return $("<li></li>")
-                        .data("item.autocomplete", item)
-                        .append("<a>" + t + "</a>")
-                    .appendTo(ul);
-                    };
-        });
-        
-    </script>
-</form>
-    </div>
-    <div class="header-selectors-wrapper">
-        <div class="tax-display-type-selector">
-            
-        </div>
-        <div class="currency-selector">
-            
-        </div>
-        <div class="language-selector">
-                <ul class="language-list">
-            <li><a href="http://www.misterja.com:90/zh/changelanguage/2?returnurl=%2fzh%2f" title="简体中文">
+				<div class="header-selectors-wrapper">
+        	<div class="tax-display-type-selector">
+          </div>
+        	<div class="currency-selector">  
+        	</div>
+        	<div class="language-selector">
+          	<ul class="language-list">
+            	<li><a href="http://www.misterja.com:90/zh/changelanguage/2?returnurl=%2fzh%2f" title="简体中文">
                 <img title="简体中文" alt="简体中文" class="selected" src="md/cn.png">
-            </a></li>
-            <li><a href="http://www.misterja.com:90/zh/changelanguage/3?returnurl=%2fzh%2f" title="Deutsch">
+            	</a></li>
+            	<li><a href="http://www.misterja.com:90/zh/changelanguage/3?returnurl=%2fzh%2f" title="Deutsch">
                 <img title="Deutsch" alt="Deutsch" src="md/de.png">
-            </a></li>
-            <li><a href="http://www.misterja.com:90/zh/changelanguage/1?returnurl=%2fzh%2f" title="English">
+            	</a></li>
+            	<li><a href="http://www.misterja.com:90/zh/changelanguage/1?returnurl=%2fzh%2f" title="English">
                 <img title="English" alt="English" src="md/us.png">
-            </a></li>
-    </ul>
+            	</a></li>
+						</ul>
+					</div>  
+				</div>
+			</div> <!-- div class header-links-wrapper-->
 
-        </div>
-        
-    </div>
-</div>
+			<div class="header-menu">
+				<ul class="top-menu">
+					<li>
+						<a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
+						</a>
+						<div class="top-menu-triangle">
+						</div>
+					</li>
+    		</ul>
 
-        <div class="header-menu">
-            
-
-<ul class="top-menu">
-    
-    <li>
-        <a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
-        </a>
-                <div class="top-menu-triangle"></div>
-
-    </li>
-    
-</ul>
-
-<script type="text/javascript">
-    $('li', '.top-menu').on('mouseenter', function () {
-        $('a', $(this)).first().addClass('hover');
-        if (!$(this).parent().hasClass('top-menu')) {
-            var width = $(this).innerWidth();
-            $('.sublist', $(this)).first().css('left', width + 15);
-        }
-        $('.sublist', $(this)).first().addClass('active');
-        $('.top-menu-triangle', $(this)).addClass('active');
-    });
-
-    $('li', '.top-menu').on('mouseleave', function () {
-        $('a', $(this)).first().removeClass('hover');
-        $('.sublist', $(this)).first().removeClass('active');
-        $('.top-menu-triangle', $(this)).removeClass('active');
-    });
-
-</script>
+				<script type="text/javascript">
+						$('li', '.top-menu').on('mouseenter', function () {
+								$('a', $(this)).first().addClass('hover');
+								if (!$(this).parent().hasClass('top-menu')) {
+										var width = $(this).innerWidth();
+										$('.sublist', $(this)).first().css('left', width + 15);
+								}
+								$('.sublist', $(this)).first().addClass('active');
+								$('.top-menu-triangle', $(this)).addClass('active');
+						});
+				
+						$('li', '.top-menu').on('mouseleave', function () {
+								$('a', $(this)).first().removeClass('hover');
+								$('.sublist', $(this)).first().removeClass('active');
+								$('.top-menu-triangle', $(this)).removeClass('active');
+						});
+				
+				</script>
 
         <div id="mob-menu-button">
             <a href="">
@@ -208,16 +182,13 @@
                 <span>商品分类</span>
             </a>
         </div>
-        <ul class="mob-top-menu">
-            
-    <li>
-        <a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
-        </a>
-                <div class="top-menu-triangle"></div>
-
-    </li>
-             
-            
+        <ul class="mob-top-menu">        
+					<li>
+							<a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
+							</a>
+											<div class="top-menu-triangle"></div>
+			
+					</li>   
         </ul>
         <script type="text/javascript">
             $('a', $('#mob-menu-button')).toggle(function() {
@@ -241,378 +212,422 @@
                 });
             });
         </script>
+			</div> <!-- div class header-menu-->
+  
+			<div class="ajax-loading-block-window" style="display: none">
+				<div class="loading-image">
+				</div>
+			</div>
+			
+			<div class="master-wrapper-main">
+      	<div class="leftside-3">
+    			<div class="block block-category-navigation">
+						<div class="title">
+								<strong>商品分类</strong>
+						</div>
+        		<div class="listbox">
+            	<ul class="list">
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E4%BC%91%E9%97%B2%E9%A3%9F%E5%93%81">休闲食品
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E6%96%B9%E4%BE%BF%E9%80%9F%E9%A3%9F">方便速食
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E8%8C%B6%E9%A5%AE%E5%86%B2%E8%B0%83">茶饮冲调
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E8%B0%83%E5%91%B3%E5%93%81">调味品
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E7%B2%AE%E6%B2%B9%E5%B9%B2%E8%B4%A7">粮油干货
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E5%9C%B0%E6%96%B9%E7%89%B9%E4%BA%A7">地方特产
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E4%B8%9C%E5%8D%97%E4%BA%9A%E9%A3%9F%E5%93%81">爱上东南亚
+										</a>
+						
+								</li>
+								<li class="inactive">
+										<a href="http://www.misterja.com:90/zh/%E5%8D%97%E5%8C%97%E5%B9%B2%E8%B4%A7">生鲜食品
+										</a>
+						
+								</li>
+            	</ul>
+        		</div><!-- div class listbox-->
+    			</div> <!-- div class block block-category-navigation-->
+    			
+					<div class="block block-popular-tags">
+						<div class="title">
+							<strong>热门标签</strong>
+						</div>
+						<div class="listbox">
+							<div class="tags">
+								<ul>
+									<li><a href="http://www.misterja.com:90/zh/producttag/25/%E5%B9%B2%E9%9D%A2" style="font-size:90%;">干面</a></li>
+									<li><a href="http://www.misterja.com:90/zh/producttag/24/%E5%AE%BD%E9%9D%A2" style="font-size:90%;">宽面</a></li>
+									<li><a href="http://www.misterja.com:90/zh/producttag/23/%E9%9D%A2%E6%9D%A1" style="font-size:90%;">面条</a></li>
+								</ul>
+							</div>
+        		</div>
+    			</div>
+				</div> <!--div class leftside-3-->
 
-        </div>
-        
-        
-        <div class="ajax-loading-block-window" style="display: none">
-            <div class="loading-image">
-            </div>
-        </div>
-        <div class="master-wrapper-main">
-            
+				<div class="rightside-3">
+					<div class="block block-newsletter">
+						<div class="title">
+								<strong>消息订阅</strong>
+						</div>
+    				
+						<div class="listbox">
+        			<div id="newsletter-subscribe-block" class="newsletter-subscribe-block">
+            		<span>订阅:</span>
+								<div class="newsletter-email">
+									<input id="newsletter-email" name="NewsletterEmail" type="text">
+									<span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"></span>
+								</div>
+								<div class="buttons">
+									<input value="提交" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button" type="button">
+									<span id="subscribe-loading-progress" style="display: none;" class="please-wait">请稍后.....</span>
+								</div>
+							</div>
+							
+							<div id="newsletter-result-block" class="newsletter-result-block">
+							</div>
+    				</div> <!--- div class listbox-->
+						
+						<script type="text/javascript">
+								$(document).ready(function () {
+										$('#newsletter-subscribe-button').click(function () {
+												
+												var email = $("#newsletter-email").val();
+												var subscribeProgress = $("#subscribe-loading-progress");
+												subscribeProgress.show();
+												$.ajax({
+														cache: false,
+														type: "POST",
+														url: "/zh/subscribenewsletter",
+														data: { "email": email },
+														success: function (data) {
+																subscribeProgress.hide();
+																$("#newsletter-result-block").html(data.Result);
+																 if (data.Success) {
+																		$('#newsletter-subscribe-block').hide();
+																		$('#newsletter-result-block').show();
+																 }
+																 else {
+																		$('#newsletter-result-block').fadeIn("slow").delay(2000).fadeOut("slow");
+																 }
+														},
+														error:function (xhr, ajaxOptions, thrownError){
+																alert('Failed to subscribe.');
+																subscribeProgress.hide();
+														}  
+												});                
+												return false;
+										});
+								});
+						</script>
+					</div>
+				</div> <!-- div class rightside-3 -->
+				
+				<div class="center-3"> 
+					<div class="page home-page">
+						<div class="page-body">
+							<div class="slider-wrapper theme-default">
+								<div id="nivo-slider" class="nivoSlider">
+                	<a style="display: block;" class="nivo-imageLink" href="http://www.misterja.com:90/zh/%E6%B5%B7%E5%A4%A9%E6%8B%9B%E7%89%8C%E6%8B%8C%E9%A5%AD%E9%85%B1200g">
+                		<img style="width: 850px; visibility: hidden; display: inline;" src="md/0000108.jpeg" data-thumb="http://www.misterja.com:90/content/images/thumbs/0000108.jpeg" data-transition="" alt="" title="">
+            			</a>
 
-
-<div class="leftside-3">
-
-    <div class="block block-category-navigation">
-        <div class="title">
-            <strong>商品分类</strong>
-        </div>
-        <div class="listbox">
-            <ul class="list">
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E4%BC%91%E9%97%B2%E9%A3%9F%E5%93%81">休闲食品
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E6%96%B9%E4%BE%BF%E9%80%9F%E9%A3%9F">方便速食
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E8%8C%B6%E9%A5%AE%E5%86%B2%E8%B0%83">茶饮冲调
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E8%B0%83%E5%91%B3%E5%93%81">调味品
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E7%B2%AE%E6%B2%B9%E5%B9%B2%E8%B4%A7">粮油干货
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E5%9C%B0%E6%96%B9%E7%89%B9%E4%BA%A7">地方特产
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E4%B8%9C%E5%8D%97%E4%BA%9A%E9%A3%9F%E5%93%81">爱上东南亚
-        </a>
-
-    </li>
-    <li class="inactive">
-        <a href="http://www.misterja.com:90/zh/%E5%8D%97%E5%8C%97%E5%B9%B2%E8%B4%A7">生鲜食品
-        </a>
-
-    </li>
-            </ul>
-        </div>
-    </div>
-    <div class="block block-popular-tags">
-        <div class="title">
-            <strong>热门标签</strong>
-        </div>
-        <div class="listbox">
-            <div class="tags">
-                <ul>
-                        <li><a href="http://www.misterja.com:90/zh/producttag/25/%E5%B9%B2%E9%9D%A2" style="font-size:90%;">干面</a></li>
-                        <li><a href="http://www.misterja.com:90/zh/producttag/24/%E5%AE%BD%E9%9D%A2" style="font-size:90%;">宽面</a></li>
-                        <li><a href="http://www.misterja.com:90/zh/producttag/23/%E9%9D%A2%E6%9D%A1" style="font-size:90%;">面条</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="rightside-3">
-<div class="block block-newsletter">
-    <div class="title">
-        <strong>消息订阅</strong>
-    </div>
-    <div class="listbox">
-        <div id="newsletter-subscribe-block" class="newsletter-subscribe-block">
-            <span>订阅:</span>
-            <div class="newsletter-email">
-            <input id="newsletter-email" name="NewsletterEmail" type="text">
-            <span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"></span>
-            </div>
-            <div class="buttons">
-                <input value="提交" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button" type="button">
-                <span id="subscribe-loading-progress" style="display: none;" class="please-wait">请稍后.....</span>
-            </div>
-</div>
-        <div id="newsletter-result-block" class="newsletter-result-block">
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#newsletter-subscribe-button').click(function () {
-                
-                var email = $("#newsletter-email").val();
-                var subscribeProgress = $("#subscribe-loading-progress");
-                subscribeProgress.show();
-                $.ajax({
-                    cache: false,
-                    type: "POST",
-                    url: "/zh/subscribenewsletter",
-                    data: { "email": email },
-                    success: function (data) {
-                        subscribeProgress.hide();
-                        $("#newsletter-result-block").html(data.Result);
-                         if (data.Success) {
-                            $('#newsletter-subscribe-block').hide();
-                            $('#newsletter-result-block').show();
-                         }
-                         else {
-                            $('#newsletter-result-block').fadeIn("slow").delay(2000).fadeOut("slow");
-                         }
-                    },
-                    error:function (xhr, ajaxOptions, thrownError){
-                        alert('Failed to subscribe.');
-                        subscribeProgress.hide();
-                    }  
-                });                
-                return false;
-            });
-        });
-    </script>
-</div>
-</div>
-<div class="center-3">
-    
-    
-<div class="page home-page">
-    <div class="page-body">
-        
-
-<div class="slider-wrapper theme-default">
-    <div id="nivo-slider" class="nivoSlider">
-                    <a style="display: block;" class="nivo-imageLink" href="http://www.misterja.com:90/zh/%E6%B5%B7%E5%A4%A9%E6%8B%9B%E7%89%8C%E6%8B%8C%E9%A5%AD%E9%85%B1200g">
-                <img style="width: 850px; visibility: hidden; display: inline;" src="md/0000108.jpeg" data-thumb="http://www.misterja.com:90/content/images/thumbs/0000108.jpeg" data-transition="" alt="" title="">
-            </a>
-
-                    <a style="display: block;" class="nivo-imageLink" href="http://www.misterja.com:90/%E5%9C%B0%E6%96%B9%E7%89%B9%E4%BA%A7">
-                <img style="width: 850px; visibility: hidden; display: inline;" src="md/0000121.jpeg" data-thumb="http://www.misterja.com:90/content/images/thumbs/0000121.jpeg" data-transition="" alt="" title="地方特色美食">
-            </a>
-
-        
-        
-        
-    <img style="display: inline; height: 390px;" src="md/0000108.jpeg" class="nivo-main-image"><div style="display: block;" class="nivo-caption">地方特色美食</div><div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div><div style="left: 0px; width: 850px; height: 391px; opacity: 0.955053; overflow: hidden;" class="nivo-slice" name="0"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-0px;"></div><div style="left: 57px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="1"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-57px;"></div><div style="left: 114px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="2"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-114px;"></div><div style="left: 171px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="3"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-171px;"></div><div style="left: 228px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="4"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-228px;"></div><div style="left: 285px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="5"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-285px;"></div><div style="left: 342px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="6"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-342px;"></div><div style="left: 399px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="7"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-399px;"></div><div style="left: 456px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="8"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-456px;"></div><div style="left: 513px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="9"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-513px;"></div><div style="left: 570px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="10"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-570px;"></div><div style="left: 627px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="11"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-627px;"></div><div style="left: 684px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="12"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-684px;"></div><div style="left: 741px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="13"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-741px;"></div><div style="left: 798px; width: 52px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="14"><img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-798px;"></div></div><div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control active" rel="1">2</a></div>
-</div>
-<script type="text/javascript">
-    $(window).load(function () {
-        $('#nivo-slider').nivoSlider();
-    });
-</script>
+                  <a style="display: block;" class="nivo-imageLink" href="http://www.misterja.com:90/%E5%9C%B0%E6%96%B9%E7%89%B9%E4%BA%A7">
+                		<img style="width: 850px; visibility: hidden; display: inline;" src="md/0000121.jpeg" data-thumb="http://www.misterja.com:90/content/images/thumbs/0000121.jpeg" data-transition="" alt="" title="地方特色美食">
+            			</a>
+										<img style="display: inline; height: 390px;" src="md/0000108.jpeg" class="nivo-main-image"><div style="display: block;" class="nivo-caption">地方特色美食</div><div class="nivo-directionNav">
+									<a class="nivo-prevNav">Prev</a>
+									<a class="nivo-nextNav">Next</a>
+								</div>
+								
+								<div style="left: 0px; width: 850px; height: 391px; opacity: 0.955053; overflow: hidden;" class="nivo-slice" name="0">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-0px;">
+								</div>
+								
+								<div style="left: 57px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="1">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-57px;">
+								</div>
+								
+								<div style="left: 114px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="2">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-114px;">
+								</div>
+								
+								<div style="left: 171px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="3">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-171px;">
+								</div>
+								
+								<div style="left: 228px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="4">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-228px;">
+								</div>
+								
+								<div style="left: 285px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="5">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-285px;">
+								</div>
+								
+								<div style="left: 342px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="6">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-342px;">
+								</div>
+								
+								<div style="left: 399px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="7">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-399px;">
+								</div>
+								
+								<div style="left: 456px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="8">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-456px;">
+								</div>
+								
+								<div style="left: 513px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="9">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-513px;"></div>
+								<div style="left: 570px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="10">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-570px;">
+								</div>
+								<div style="left: 627px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="11">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-627px;">
+								</div>
+								<div style="left: 684px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="12">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-684px;">
+								</div>
+								<div style="left: 741px; width: 57px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="13">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-741px;">
+								</div>
+								<div style="left: 798px; width: 52px; height: 391px; opacity: 0; overflow: hidden;" class="nivo-slice" name="14">
+									<img src="md/0000121.jpeg" style="position:absolute; width:850px; height:auto; display:block !important; top:0; left:-798px;">
+								</div>
+							</div> <!--div class slider-wrapper theme-default -->
+							
+							<div class="nivo-controlNav">
+								<a class="nivo-control" rel="0">1</a>
+								<a class="nivo-control active" rel="1">2</a>
+							</div>
+						</div> <!-- div class page-body -->
+						<script type="text/javascript">
+								$(window).load(function () {
+										$('#nivo-slider').nivoSlider();
+								});
+						</script>
 
             <div class="topic-html-content">
-            <div class="topic-html-content-title">
+            	<div class="topic-html-content-title">
                 <h2 class="topic-html-content-header">
-                    Welcome to our store</h2>
-            </div>
-        <div class="topic-html-content-body">
-            <p>Online shopping is the process consumers go through to 
-purchase products or services over the Internet. You can edit this in 
-the admin site.</p><p>If you have questions, see the <a href="http://www.nopcommerce.com/documentation.aspx">Documentation</a>, or post in the <a href="http://www.nopcommerce.com/boards/">Forums</a> at <a href="http://www.nopcommerce.com/">nopCommerce.com</a></p>
-        </div>
-    </div>
-
-        
-        
-
+                    Welcome to our store
+								</h2>
+            	</div>
+        			
+							<div class="topic-html-content-body">
+								<p>Online shopping is the process consumers go through to 
+		purchase products or services over the Internet. You can edit this in 
+		the admin site.</p>
+								<p>If you have questions, see the <a href="http://www.nopcommerce.com/documentation.aspx">Documentation</a>, or post in the <a href="http://www.nopcommerce.com/boards/">Forums</a> at <a href="http://www.nopcommerce.com/">nopCommerce.com</a></p>
+        			</div>
+    				</div> <!-- div class topic-html-content -->
+						
             <div class="product-grid bestsellers">
-        <div class="title">
-            <strong>畅销商品</strong>
-        </div>
-            <div class="item-box">
-                
-<div class="product-item" data-productid="115">
-    <div class="picture">
-        <a href="http://www.misterja.com:90/zh/%E6%97%A5%E6%AD%A3%E7%89%8C-%E6%97%A0%E9%98%B2%E8%85%90-%E5%8E%9F%E5%91%B3%E5%85%B3%E5%BA%99%E9%9D%A2" title="显示 日正牌 无防腐 原味关庙面 的细节">
-            <img alt=" 日正牌 无防腐 原味关庙面 的图片" src="md/0000116_-_125.jpeg" title="显示 日正牌 无防腐 原味关庙面 的细节">
-        </a>
-    </div>
-    <div class="details">
-        <h2 class="product-title">
-            <a href="http://www.misterja.com:90/zh/%E6%97%A5%E6%AD%A3%E7%89%8C-%E6%97%A0%E9%98%B2%E8%85%90-%E5%8E%9F%E5%91%B3%E5%85%B3%E5%BA%99%E9%9D%A2"> 日正牌 无防腐 原味关庙面 </a>
-        </h2>
-            <div class="product-rating-box" title="5 条评价">
-                <div class="rating">
-                    <div style="width: 92%">
-                    </div>
-                </div>
-            </div>
-        <div class="description">
-            日正
-        </div>
-        <div class="add-info">
-            <div class="prices">
-                    <span class="price old-price">€8.00含税</span>
-                <span class="price actual-price">€5.00含税</span>
-            </div>
-            <div class="buttons">
-                
-                    <input value="加入购物车" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/zh/addproducttocart/catalog/115/1/1    ');return false;" type="button">
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-            </div>
-            <div class="item-box">
-                
-<div class="product-item" data-productid="177">
-    <div class="picture">
-        <a href="http://www.misterja.com:90/zh/%E5%96%9C%E4%B9%8B%E9%83%8E%E4%BC%98%E4%B9%90%E7%BE%8E-%E5%A5%B6%E8%8C%B6-%E8%8D%89%E8%8E%93%E5%91%B3" title="显示【喜之郎】优乐美 奶茶 草莓味的细节">
-            <img alt="【喜之郎】优乐美 奶茶 草莓味的图片" src="md/default-image_125.gif" title="显示【喜之郎】优乐美 奶茶 草莓味的细节">
-        </a>
-    </div>
-    <div class="details">
-        <h2 class="product-title">
-            <a href="http://www.misterja.com:90/zh/%E5%96%9C%E4%B9%8B%E9%83%8E%E4%BC%98%E4%B9%90%E7%BE%8E-%E5%A5%B6%E8%8C%B6-%E8%8D%89%E8%8E%93%E5%91%B3">【喜之郎】优乐美 奶茶 草莓味</a>
-        </h2>
-            <div class="product-rating-box" title="0 条评价">
-                <div class="rating">
-                    <div style="width: 0%">
-                    </div>
-                </div>
-            </div>
-        <div class="description">
-            【喜之郎】
-        </div>
-        <div class="add-info">
-            <div class="prices">
-                <span class="price actual-price">€2.30含税</span>
-            </div>
-            <div class="buttons">
-                
-                    <input value="加入购物车" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/zh/addproducttocart/catalog/177/1/1    ');return false;" type="button">
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-            </div>
-            <div class="item-box">
-                
-<div class="product-item" data-productid="512">
-    <div class="picture">
-        <a href="http://www.misterja.com:90/zh/%E4%B9%90%E4%B9%90%E5%8E%A8%E4%BA%94%E8%B0%B7%E6%9D%82%E7%B2%AE-%E9%BB%91%E7%B1%B3" title="显示 【乐乐厨】五谷杂粮 黑米的细节">
-            <img alt=" 【乐乐厨】五谷杂粮 黑米的图片" src="md/default-image_125.gif" title="显示 【乐乐厨】五谷杂粮 黑米的细节">
-        </a>
-    </div>
-    <div class="details">
-        <h2 class="product-title">
-            <a href="http://www.misterja.com:90/zh/%E4%B9%90%E4%B9%90%E5%8E%A8%E4%BA%94%E8%B0%B7%E6%9D%82%E7%B2%AE-%E9%BB%91%E7%B1%B3"> 【乐乐厨】五谷杂粮 黑米</a>
-        </h2>
-            <div class="product-rating-box" title="0 条评价">
-                <div class="rating">
-                    <div style="width: 0%">
-                    </div>
-                </div>
-            </div>
-        <div class="description">
-             【乐乐厨】
-        </div>
-        <div class="add-info">
-            <div class="prices">
-                    <span class="price old-price">€6.00含税</span>
-                <span class="price actual-price">€4.00含税</span>
-            </div>
-            <div class="buttons">
-                
-                    <input value="加入购物车" class="button-2 product-box-add-to-cart-button" onclick="AjaxCart.addproducttocart_catalog('/zh/addproducttocart/catalog/512/1/1    ');return false;" type="button">
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-            </div>
-    </div>
-
-        
-        
-        
-    </div>
-</div>
-
+							<div class="title">
+									<strong>畅销商品</strong>
+							</div>
+            	<div class="item-box"> 
+								<div class="product-item" data-productid="115">
+									<div class="picture">
+										<a href="http://www.misterja.com:90/zh/%E6%97%A5%E6%AD%A3%E7%89%8C-%E6%97%A0%E9%98%B2%E8%85%90-%E5%8E%9F%E5%91%B3%E5%85%B3%E5%BA%99%E9%9D%A2" title="显示 日正牌 无防腐 原味关庙面 的细节">
+											<img alt=" 日正牌 无防腐 原味关庙面 的图片" src="md/0000116_-_125.jpeg" title="显示 日正牌 无防腐 原味关庙面 的细节">
+										</a>
+    							</div>
+    							<div class="details">
+										<h2 class="product-title">
+											<a href="http://www.misterja.com:90/zh/%E6%97%A5%E6%AD%A3%E7%89%8C-%E6%97%A0%E9%98%B2%E8%85%90-%E5%8E%9F%E5%91%B3%E5%85%B3%E5%BA%99%E9%9D%A2"> 日正牌 无防腐 原味关庙面 </a>
+										</h2>
+										
+										<div class="product-rating-box" title="5 条评价">
+											<div class="rating">
+													<div style="width: 92%">
+													</div>
+											</div>
+										</div>
+									
+										<div class="description">
+												日正
+										</div>
+										
+										<div class="add-info">
+											<div class="prices">
+													<span class="price old-price">€8.00含税</span>
+													<span class="price actual-price">€5.00含税</span>
+											</div>
+											<div class="buttons">
+												<input value="加入购物车" class="button-2 product-box-add-to-cart-button" onClick="AjaxCart.addproducttocart_catalog('/zh/addproducttocart/catalog/115/1/1    ');return false;" type="button">
+											</div>
+										</div> <!-- div class add-info -->
+    							</div>
+								</div>
+            	</div> <!-- div class item-box -->
+            	
+							<div class="item-box">
+								<div class="product-item" data-productid="177">
+									<div class="picture">
+										<a href="http://www.misterja.com:90/zh/%E5%96%9C%E4%B9%8B%E9%83%8E%E4%BC%98%E4%B9%90%E7%BE%8E-%E5%A5%B6%E8%8C%B6-%E8%8D%89%E8%8E%93%E5%91%B3" title="显示【喜之郎】优乐美 奶茶 草莓味的细节">
+												<img alt="【喜之郎】优乐美 奶茶 草莓味的图片" src="md/default-image_125.gif" title="显示【喜之郎】优乐美 奶茶 草莓味的细节">
+										</a>
+									</div>
+    							
+									<div class="details">
+										<h2 class="product-title">
+												<a href="http://www.misterja.com:90/zh/%E5%96%9C%E4%B9%8B%E9%83%8E%E4%BC%98%E4%B9%90%E7%BE%8E-%E5%A5%B6%E8%8C%B6-%E8%8D%89%E8%8E%93%E5%91%B3">【喜之郎】优乐美 奶茶 草莓味</a>
+										</h2>
+            				<div class="product-rating-box" title="0 条评价">
+											<div class="rating">
+													<div style="width: 0%">
+													</div>
+											</div>
+            				</div>
+        						<div class="description">
+											【喜之郎】
+										</div>
+        						<div class="add-info">
+											<div class="prices">
+													<span class="price actual-price">€2.30含税</span>
+											</div>
+											<div class="buttons">
+													
+												<input value="加入购物车" class="button-2 product-box-add-to-cart-button" onClick="AjaxCart.addproducttocart_catalog('/zh/addproducttocart/catalog/177/1/1    ');return false;" type="button">
+											</div>
+        						</div>
+    							</div>
+								</div>
+							</div> <!-- div class item-box -->
+            	<div class="item-box">              
+								<div class="product-item" data-productid="512">
+									<div class="picture">
+										<a href="http://www.misterja.com:90/zh/%E4%B9%90%E4%B9%90%E5%8E%A8%E4%BA%94%E8%B0%B7%E6%9D%82%E7%B2%AE-%E9%BB%91%E7%B1%B3" title="显示 【乐乐厨】五谷杂粮 黑米的细节">
+													<img alt=" 【乐乐厨】五谷杂粮 黑米的图片" src="md/default-image_125.gif" title="显示 【乐乐厨】五谷杂粮 黑米的细节">
+										</a>
+    							</div>
+									<div class="details">
+										<h2 class="product-title">
+											<a href="http://www.misterja.com:90/zh/%E4%B9%90%E4%B9%90%E5%8E%A8%E4%BA%94%E8%B0%B7%E6%9D%82%E7%B2%AE-%E9%BB%91%E7%B1%B3"> 【乐乐厨】五谷杂粮 黑米</a>
+										</h2>
+										
+										<div class="product-rating-box" title="0 条评价">
+											<div class="rating">
+												<div style="width: 0%">
+												</div>
+											</div>
+										</div>
+										
+										<div class="description">
+												 【乐乐厨】
+										</div>
+										
+										<div class="add-info">
+											<div class="prices">
+												<span class="price old-price">€6.00含税</span>
+												<span class="price actual-price">€4.00含税</span>
+											</div>
+											<div class="buttons">
+													
+												<input value="加入购物车" class="button-2 product-box-add-to-cart-button" onClick="AjaxCart.addproducttocart_catalog('/zh/addproducttocart/catalog/512/1/1    ');return false;" type="button">
+											</div>	
+										</div>
+										
+									</div>
+								</div> <!-- div class item-box -->
+							</div> <!-- div class product-grid bestsellers-->
+						</div> 
+					</div> <!-- div class center-3 -->
+				</div> 
+			</div>
+		</div> <!-- div class master-wrapper-page -->
+	</div> <!-- div class master-wrapper-content -->
     
-</div>
-        </div>
-        
-    </div>
-    
-<div class="footer">
+	<div class="footer">
     <div class="footer-menu-wrapper">
-        <div class="column information">
-            <h3>信息</h3>
-            <ul>
-                    <li><a href="http://www.misterja.com:90/zh/sitemap">站点地图</a></li>
-                <li><a>退换商品</a></li>
-                <li><a>隐私声明</a></li>
-                <li><a>使用条件</a></li>
-                <li><a>关于我们</a></li>
-                <li><a href="http://www.misterja.com:90/zh/contactus">联系我们</a></li>
-            </ul>
+       <div class="column information">
+          <h3>信息</h3>
+          <ul>
+						<li><a href="http://www.misterja.com:90/zh/sitemap">站点地图</a></li>
+						<li><a>退换商品</a></li>
+						<li><a>隐私声明</a></li>
+						<li><a>使用条件</a></li>
+						<li><a>关于我们</a></li>
+						<li><a href="http://www.misterja.com:90/zh/contactus">联系我们</a></li>
+					</ul>
         </div>
+				
         <div class="column customer-service">
-            <h3>客服</h3>
-            <ul>
-                <li><a href="http://www.misterja.com:90/zh/search">搜索</a> </li>
-                    <li><a href="http://www.misterja.com:90/zh/news">新闻</a></li>
-                                    <li><a href="http://www.misterja.com:90/zh/blog">博客</a></li>
-                                                    <li><a href="http://www.misterja.com:90/zh/recentlyviewedproducts">最近浏览商品</a></li>
-                                                    <li><a href="http://www.misterja.com:90/zh/newproducts">最新商品</a></li>
-            </ul>
+					<h3>客服</h3>
+					<ul>
+						<li><a href="http://www.misterja.com:90/zh/search">搜索</a> </li>
+           	<li><a href="http://www.misterja.com:90/zh/news">新闻</a></li>
+            <li><a href="http://www.misterja.com:90/zh/blog">博客</a></li>
+            <li><a href="http://www.misterja.com:90/zh/recentlyviewedproducts">最近浏览商品</a></li>
+            <li><a href="http://www.misterja.com:90/zh/newproducts">最新商品</a></li>
+					</ul>
         </div>
+				
         <div class="column my-account">
-            <h3>我的账户</h3>
-            <ul>
-                <li><a href="http://www.misterja.com:90/zh/customer/info" class="account">我的帐户</a></li>
-                    <li><a href="http://www.misterja.com:90/zh/customer/orders">我的订单</a></li>
-                                    <li><a href="http://www.misterja.com:90/zh/customer/addresses" class="">地址薄</a></li>
-                                    <li><a href="http://www.misterja.com:90/zh/cart" class="ico-cart">购物车</a></li>
-                                    <li><a href="http://www.misterja.com:90/zh/wishlist" class="ico-wishlist">收藏夹</a></li>
-            </ul>
+					<h3>我的账户</h3>
+					<ul>
+						<li><a href="http://www.misterja.com:90/zh/customer/info" class="account">我的帐户</a></li>
+						<li><a href="http://www.misterja.com:90/zh/customer/orders">我的订单</a></li>
+						<li><a href="http://www.misterja.com:90/zh/customer/addresses" class="">地址薄</a></li>
+						<li><a href="http://www.misterja.com:90/zh/cart" class="ico-cart">购物车</a></li>
+						<li><a href="http://www.misterja.com:90/zh/wishlist" class="ico-wishlist">收藏夹</a></li>
+					</ul>
         </div>
+				
         <div class="column follow-us">
-            <h3>关注我们</h3>
-            <ul>
-                    <li class="facebook"><a href="http://www.facebook.com/nopcommerce" target="_blank">Facebook</a></li>
-                                                    <li class="twitter"><a href="https://twitter.com/solarding" target="_blank">Twitter</a></li>
-                                                    <li class="rss"><a href="http://www.misterja.com:90/zh/news/rss/2">RSS</a></li>
-                                                    <li class="youtube"><a href="http://www.youtube.com/user/nopCommerce" target="_blank">YouTube</a></li>
-                                                    <li class="google-plus"><a href="https://plus.google.com/+nopcommerce" target="_blank">Google+</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-poweredby">
-        Powered by <a href="http://www.nopcommerce.com/">nopCommerce</a>
-        
-    </div>
-    <div class="footer-disclaimer">
-        版权所有 © 2014 亚先生 精品商城 保留所有权利
-    </div>
-    <div class="footer-store-theme">
-        
+					<h3>关注我们</h3>
+					<ul>
+						<li class="facebook"><a href="http://www.facebook.com/nopcommerce" target="_blank">Facebook</a></li>
+						<li class="twitter"><a href="https://twitter.com/solarding" target="_blank">Twitter</a></li>
+						<li class="rss"><a href="http://www.misterja.com:90/zh/news/rss/2">RSS</a></li>
+						<li class="youtube"><a href="http://www.youtube.com/user/nopCommerce" target="_blank">YouTube</a></li>
+						<li class="google-plus"><a href="https://plus.google.com/+nopcommerce" target="_blank">Google+</a></li>
+					</ul>
+				</div>
+    	</div>
+				
+			<div class="footer-poweredby">
+					Powered by <a href="http://www.nopcommerce.com/">nopCommerce</a>
+			</div>
+			<div class="footer-disclaimer">
+					版权所有 © 2014 亚先生 精品商城 保留所有权利
+			</div>
+			<div class="footer-store-theme">
+				<select id="store-theme" name="store-theme" onChange="setLocation(this.value);"><option selected="selected" value="/common/setstoretheme?themename=basic&amp;returnurl=%2fzh%2f">简洁清新</option>
+				<option value="/common/setstoretheme?themename=defaultclean&amp;returnurl=%2fzh%2f">Default clean</option>
+				</select>
+			</div>
+		</div>
+	</div> <!-- div class footer-->
+	<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all">
+	</ul>
 
-<select id="store-theme" name="store-theme" onchange="setLocation(this.value);"><option selected="selected" value="/common/setstoretheme?themename=basic&amp;returnurl=%2fzh%2f">简洁清新</option>
-<option value="/common/setstoretheme?themename=defaultclean&amp;returnurl=%2fzh%2f">Default clean</option>
-</select>
-    </div>
-    
-    
-</div>
-</div>
-
-
-
-    
-    
-
-
-<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>
+</body>
+</html>

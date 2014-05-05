@@ -216,42 +216,42 @@
 				
 				</script>
 
-        <div id="mob-menu-button">
-            <a href="">
-                <span class="icon"><span class="line"></span><span class="line"></span><span class="line"></span></span>
-                <span>商品分类</span>
-            </a>
-        </div>
-        <ul class="mob-top-menu">        
-					<li>
-							<a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
-							</a>
-											<div class="top-menu-triangle"></div>
-			
-					</li>   
-        </ul>
-        <script type="text/javascript">
-            $('a', $('#mob-menu-button')).toggle(function() {
-                    $('.mob-top-menu').addClass('show');
-                },
-                function() {
-                    $('.mob-top-menu').removeClass('show');
-                }
-            );
-
-            $(function($) {
-                $('.mob-top-menu .expand').click(function() {
-                    var parent = $(this).parent();
-                    if (parent.hasClass('active')) {
-                        $(".sublist:first", parent).hide(300);
-                        parent.removeClass('active');
-                    } else {
-                        $(".sublist:first", parent).show(300);
-                        parent.addClass('active');
-                    }
-                });
-            });
-        </script>
+                <!--<div id="mob-menu-button">
+                    <a href="">
+                        <span class="icon"><span class="line"></span><span class="line"></span><span class="line"></span></span>
+                        <span>商品分类</span>
+                    </a>
+                </div>
+                <ul class="mob-top-menu">        
+                            <li>
+                                    <a href="http://www.misterja.com:90/zh/ja%E7%B2%BE%E9%80%89%E5%9B%A2">Ja精选团
+                                    </a>
+                                                    <div class="top-menu-triangle"></div>
+                    
+                            </li>   
+                </ul>-->
+                <script type="text/javascript">
+				$('a', $('#mob-menu-button')).toggle(function() {
+						$('.mob-top-menu').addClass('show');
+					},
+					function() {
+						$('.mob-top-menu').removeClass('show');
+					}
+				);
+	
+				$(function($) {
+					$('.mob-top-menu .expand').click(function() {
+						var parent = $(this).parent();
+						if (parent.hasClass('active')) {
+							$(".sublist:first", parent).hide(300);
+							parent.removeClass('active');
+						} else {
+							$(".sublist:first", parent).show(300);
+							parent.addClass('active');
+						}
+					});
+				});
+				</script>
 			</div> <!-- div class header-menu-->
   
 			<div class="ajax-loading-block-window" style="display: none">
@@ -437,8 +437,107 @@
                         <h2>deguo</h2>
                     </div>
                 </div>
-                
-			</div>
+                <div class="clear-space">
+                </div>
+			</div> <!-- class master-wrapper-main -->
+            <div class="bottom-1">
+            	<ul class="bottm-1-nav">
+                	<li>
+                    	<a href="#" class="rect-128 jingxuan selected">本周精选</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-128 binggan">饼干蛋糕</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-82 haitai">海苔薯片</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-82 zao">枣</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-82 huasheng">花生瓜子</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-105 fengzhua">凤爪鸭脖</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-105 tangguo">糖果</a>
+                    </li>
+                    <li>
+                    	<a href="#" class="rect-220x108 niurougan">牛肉干</a>
+                    </li>
+                </ul>
+                <div class="bottom-1-content">
+                	<ul>
+                    	<li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                    	<li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                        <li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                        <li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                        <li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                        <li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                        <li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                        <li>
+                        	<a href="*">
+                            	<img src="md/img/shupian.jpg">
+                            </a>
+                            <div class="item-price">
+                            	￥78.00
+                           	</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear-space">
+                </div>
+            </div>
 		</div> <!-- div class master-wrapper-page -->
 	</div> <!-- div class master-wrapper-content -->
     

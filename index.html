@@ -15,6 +15,18 @@
 	<link href="md/default.css" rel="stylesheet" type="text/css">
 	<link href="md/index.css" rel="stylesheet" type="text/css">
 	<script src="md/sngopg43acbqcfnyxutx2lusw3jtnm47gptcyqgofky1.js"></script>
+    <script src="md/js/jquery-1.10.2.min.js"></script>
+	<script src="md/js/index.js"></script>
+	<script type="application/javascript">
+		$(document).ready(function () {
+			$("#drink-catelog").qmTabs(".bottom-2-content");
+			$("#drink-catelog").qmTabInit(".bottom-2-content", 0);
+			
+			$("#snake-catelog").qmTabs(".bottom-2-content");
+			$("#snake-catelog").qmTabInit(".bottom-2-content", 1);
+		});
+	</script>
+    
 
 	<link rel="shortcut icon" href="http://www.misterja.com:90/favicon.ico">
     <!--Powered by nopCommerce - http://www.nopCommerce.com-->
@@ -538,9 +550,16 @@
                 <div class="clear-space">
                 </div>
             </div> <!-- bottom1 -->
-            <div class="bottom-2">
+            <div id="drink-catelog" class="bottom-2">
             	<div class="bottom-2-left">
                 	<img src="md/img/milk.png">
+                    <h2>饮品</h2>
+                    <ul class="tabs">
+                    	<!--<li><a class="selected">饮料</a></li>-->
+                        <li><a>饮料</a></li>
+                        <li><a>茶</a></li>
+                        <li><a>酒水</a></li>
+                    </ul>
                 </div>
                 <div class="bottom-2-content">
                 	<ul>
@@ -605,17 +624,222 @@
                             <a class="add-cat" href="#">加入购物车</a>
                         </li>
                     </ul>
-                    <div class="bottom-2-right">
-                    	<a href="#"><img src="md/img/maotai.jpg"></a>
-                        <a href="#"><img src="md/img/maotai.jpg"></a>
-                        <a href="#"><img src="md/img/maotai.jpg"></a>
-                        <a href="#"><img src="md/img/maotai.jpg"></a>
-                        <a class="bottm-border-none" href="#"><img src="md/img/maotai.jpg"></a>
-                    </div>
+                    <ul>
+                    	<li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                    </ul>
+                    <ul>
+                    	<li>
+                        	<a class="item-img" href="#"><img src="md/img/deguo.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                    </ul>
                 </div>
+                <div class="bottom-2-right">
+                      <ul>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a class="bottm-border-none" href="#"><img src="md/img/maotai.jpg"></a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a class="bottm-border-none" href="#"><img src="md/img/w.jpg"></a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a class="bottm-border-none" href="#"><img src="md/img/luzhou.jpg"></a></li>
+                      </ul>
+                 </div>
                 <div class="clear-space">
                 </div>
-            </div>
+            </div> <!-- div id drink-->
+            
+            <div id="snake-catelog" class="bottom-2">
+            	<div class="bottom-2-left">
+                	<img src="md/img/milk.png">
+                    <h2>饮品</h2>
+                    <ul class="tabs">
+                    	<!--<li><a class="selected">饮料</a></li>-->
+                        <li><a>饮料</a></li>
+                        <li><a>茶</a></li>
+                        <li><a>酒水</a></li>
+                    </ul>
+                </div>
+                <div class="bottom-2-content">
+                	<ul>
+                    	<li>
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳RIO鸡尾酒 ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳RIO鸡尾酒 ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳RIO鸡尾酒 ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li class="bottm-border-none">
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li class="bottm-border-none">
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳RIO鸡尾酒 ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li class="bottm-border-none">
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li class="bottm-border-none">
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳RIO鸡尾酒 ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li class="bottm-border-none">
+                        	<a class="item-img" href="#"><img src="md/img/jiwei.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                    </ul>
+                    <ul>
+                    	<li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li>
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                    </ul>
+                    <ul>
+                    	<li>
+                        	<a class="item-img" href="#"><img src="md/img/deguo.jpg"></a>
+                            <a class="item-name" href="#">锐澳享装口味）275ml*6 瓶</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-2-right">
+                      <ul>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/maotai.jpg"></a></li>
+                          <li><a class="bottm-border-none" href="#"><img src="md/img/maotai.jpg"></a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/w.jpg"></a></li>
+                          <li><a class="bottm-border-none" href="#"><img src="md/img/w.jpg"></a></li>
+                      </ul>
+                      <ul>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a href="#"><img src="md/img/luzhou.jpg"></a></li>
+                          <li><a class="bottm-border-none" href="#"><img src="md/img/luzhou.jpg"></a></li>
+                      </ul>
+                 </div>
+                <div class="clear-space">
+                </div>
+            </div> <!--div id snake-->
+            
 		</div> <!-- div class master-wrapper-page -->
 	</div> <!-- div class master-wrapper-content -->
     
@@ -682,6 +906,6 @@
 	</div> <!-- div class footer-->
 	<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all">
 	</ul>
-
+    
 </body>
 </html>

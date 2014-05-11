@@ -447,6 +447,7 @@ ul.bottm-1-nav{
 }
 .bottom-2-left img{
 	height:438px;
+	width:255px;
 	display:block;
 	float:left;
 }
@@ -493,7 +494,8 @@ ul.bottm-1-nav{
 .bottom-2-content ul{
 	float:left;
 	width:835px;
-	padding:0
+	padding:0;
+	margin:0;
 }
 .bottom-2-content ul li{
 	border:1px solid #CCC;
@@ -532,16 +534,20 @@ ul.bottm-1-nav{
 }
 .bottom-2-right{
 	float:right;
+	width:130px;
+	margin:0;
 }
 .bottom-2-right a{
 	display:block;
 	width:130px;
-	padding:8px 1px;
+	padding:8px 0px;
+	border:none;
 	border-bottom:1px solid #ccc;
 }
 .bottom-2-right img{
 	display:block;
 	width:130px;
+	padding:0;
 }
 .bottom-2 .bottm-border-none{
 	border-bottom:none;

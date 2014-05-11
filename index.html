@@ -16,15 +16,78 @@
 	<link href="md/index.css" rel="stylesheet" type="text/css">
 	<script src="md/sngopg43acbqcfnyxutx2lusw3jtnm47gptcyqgofky1.js"></script>
     <script src="md/js/jquery-1.10.2.min.js"></script>
+    
+    <script src="md/js/jquery.event.move.js"></script>
+	<script src="md/js/jquery.event.swipe.js"></script>
+	<script src="md/js/unslider.min.js"></script>
+    
 	<script src="md/js/index.js"></script>
 	<script type="application/javascript">
 		$(document).ready(function () {
-			$("#drink-catelog").qmTabs(".bottom-2-content");
-			$("#drink-catelog").qmTabInit(".bottom-2-content", 0);
+			$("#chosen-catalog").bm2Tabs(".bottom-1-content");
+			$("#chosen-catalog").bm2TabInit(".bottom-1-content",0);
 			
-			$("#snake-catelog").qmTabs(".bottom-2-content");
-			$("#snake-catelog").qmTabInit(".bottom-2-content", 1);
+			$("#drink-catelog").bm2Tabs(".bottom-2-content");
+			$("#drink-catelog").bm2TabInit(".bottom-2-content",0);
+			
+			$("#snake-catelog").bm2Tabs(".bottom-2-content");
+			$("#snake-catelog").bm2TabInit(".bottom-2-content",1);
+			
+			$(".bottom-1-content > ul > li").itemHovered();
+			
+			if(window.chrome) {
+			   $('.banner li').css('background-size', '100% 100%');
+			 }
+
+			// for image slider
+			 $('.banner').unslider({
+			   //arrows: false,
+			   fluid: true,
+			   dots: true
+			 });
+		
+			 //  Find any element starting with a # in the URL
+			 //  And listen to any click events it fires
+			 $('a[href^="#"]').click(function() {
+			   //  Find the target element
+			   var target = $($(this).attr('href'));
+		
+			   //  And get its position
+			   var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
+		
+			   //  jQuery will return false if there's no element
+			   //  and your code will throw errors if it tries to do .offset().left;
+			   if(pos) {
+			 //  Scroll the page
+			 $('html, body').animate({
+			   scrollTop: pos.top,
+			   scrollLeft: pos.left
+			 }, 1000);
+			   }
+		
+			   //  Don't let them visit the url, we'll scroll you there
+			   return false;
+			 });
+		
+			 // var GoSquared = {acct: 'GSN-396664-U'};
+			 var unslider = $('.banner').unslider();
+			 $('.unslider-arrow').click(function() {
+			   var fn = this.className.split(' ')[1];
+		
+			   //  Either do unslider.data('unslider').next() or .prev() depending on the className
+			   unslider.data('unslider')[fn]();
+			 });
+		
+			 $('.banner').mouseover(function() {
+			   $('.unslider-arrow').show();
+			 });
+			 $('.banner').mouseout(function() {
+			   $('.unslider-arrow').hide();
+			 });
+			 // end of image slider
+
 		});
+			
 	</script>
     
 
@@ -388,10 +451,29 @@
 					<div class="page home-page">
 						<div class="page-body">
                         	<div class="slider-wrapper">
-                            	<div>
-                                    <a href="#">
+                            	<div class="banner">
+                                	<ul>
+                                        <li style="background-image: url('md/img/a.jpg');">
+                                            <div class="inner">
+                                            	<a href="www.jd.com"></a>
+                                            </div>
+                                        </li>
+                                        <li style="background-image: url('md/img/a.jpg');">
+                                            <div class="inner">
+                                            	<a href="www.baidu.com"></a>
+                                            </div>
+                                        </li>
+                                        <li style="background-image: url('md/img/a.jpg');">
+                                            <div class="inner">
+                                            	<a href="www.qq.com"></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="unslider-arrow prev"></a>
+                                    <a href="#" class="unslider-arrow next"></a>
+                                    <!--<a href="#">
                                         <img src="md/img/a.jpg">
-                                    </a>
+                                    </a>-->
                                 </div>
                                 <div class="slider-tip">
                                     <h2>亞先生</h2>
@@ -452,99 +534,165 @@
                 <div class="clear-space">
                 </div>
 			</div> <!-- class master-wrapper-main -->
-            <div class="bottom-1">
-            	<ul class="bottm-1-nav">
+            <div id="chosen-catalog" class="bottom-1">
+            	<ul class="bottm-1-nav tabs">
                 	<li>
-                    	<a href="#" class="rect-128 jingxuan selected">本周精选</a>
+                    	<a class="rect-128 jingxuan">本周精选</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-128 binggan">饼干蛋糕</a>
+                    	<a  class="rect-128 binggan">饼干蛋糕</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-82 haitai">海苔薯片</a>
+                    	<a  class="rect-82 haitai">海苔薯片</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-82 zao">枣</a>
+                    	<a  class="rect-82 zao">枣</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-82 huasheng">花生瓜子</a>
+                    	<a  class="rect-82 huasheng">花生瓜子</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-105 fengzhua">凤爪鸭脖</a>
+                    	<a  class="rect-105 fengzhua">凤爪鸭脖</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-105 tangguo">糖果</a>
+                    	<a  class="rect-105 tangguo">糖果</a>
                     </li>
                     <li>
-                    	<a href="#" class="rect-220x108 niurougan">牛肉干</a>
+                    	<a  class="rect-220x108 niurougan">牛肉干</a>
                     </li>
                 </ul>
                 <div class="bottom-1-content">
                 	<ul>
                     	<li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/shupian.jpg"></a></div>
+                            <div class="item-price">￥78.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                     	</li>
                     	<li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/shupian.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="奥利奥2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
+                       	<li>
+                        	<div class="item-image"><a><img src="md/img/shupian.jpg"></a></div>
+                            <div class="item-price">￥78.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                     	</li>
+                    	<li>
+                        	<div class="item-image"><a><img src="md/img/shupian.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                         <li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/shupian.jpg"></a></div>
+                            <div class="item-price">￥78.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                     	</li>
+                    	<li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                         <li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥78.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                     	</li>
+                    	<li>
+                        	<div class="item-image"><a><img src="md/img/shupian.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
+                    </ul>
+                    <ul>
+                    	<li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="奥利奥1000g" target="_blank">奥利奥1000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                         <li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                         <li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                         <li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                         <li>
-                        	<a href="*">
-                            	<img src="md/img/shupian.jpg">
-                            </a>
-                            <div class="item-price">
-                            	￥78.00
-                           	</div>
-                        </li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
+                        <li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
+                        <li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
+                        <li>
+                        	<div class="item-image"><a><img src="md/img/aoliao.jpg"></a></div>
+                            <div class="item-price">￥68.00</div>
+                            <div class="item-ext">
+                                <a class="item-info" href="http://item.jd.com/600710.html" title="新疆特产  味正品新疆和田大枣箱装2000g" target="_blank">新疆特产  味正品新疆和田大枣箱装2000g</a>
+                                <a class="btn-addCart">加入购物车</a>
+                            </div>
+                       	</li>
                     </ul>
                 </div>
                 <div class="clear-space">
@@ -745,7 +893,7 @@
                     <ul>
                     	<li>
                         	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
-                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
+                            <a class="item-name" href="#">红酒国波尔多马莎/M&S 法国波尔多美乐红酒国波尔多美乐</a>
                             <span>￥89.00</span>
                             <a class="add-cat" href="#">加入购物车</a>
                         </li>
@@ -773,31 +921,31 @@
                             <span>￥89.00</span>
                             <a class="add-cat" href="#">加入购物车</a>
                         </li>
-                        <li>
+                        <li class="bottm-border-none">
                         	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
                             <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
                             <span>￥89.00</span>
                             <a class="add-cat" href="#">加入购物车</a>
                         </li>
-                        <li>
+                        <li class="bottm-border-none">
+                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
+                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐fff红酒</a>
+                            <span>￥89.00</span>
+                            <a class="add-cat" href="#">加入购物车</a>
+                        </li>
+                        <li class="bottm-border-none">
                         	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
                             <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
                             <span>￥89.00</span>
                             <a class="add-cat" href="#">加入购物车</a>
                         </li>
-                        <li>
+                        <li class="bottm-border-none">
                         	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
                             <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
                             <span>￥89.00</span>
                             <a class="add-cat" href="#">加入购物车</a>
                         </li>
-                        <li>
-                        	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
-                            <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
-                            <span>￥89.00</span>
-                            <a class="add-cat" href="#">加入购物车</a>
-                        </li>
-                        <li>
+                        <li class="bottm-border-none">
                         	<a class="item-img" href="#"><img src="md/img/ms.jpg"></a>
                             <a class="item-name" href="#">马莎/M&S 法国波尔多美乐红酒</a>
                             <span>￥89.00</span>

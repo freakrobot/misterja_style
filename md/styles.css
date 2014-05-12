@@ -44,9 +44,15 @@ input[type="text"],input[type="password"]{border:1px solid #eee;}
 input[type="text"]:disabled{background:none repeat scroll 0 0 #FFF;}
 
 
-.master-wrapper-page, .topbar-main{
-width:1240px;
-margin:0 auto;
+.master-wrapper-page, .topbar-main, .header, .header-menu, .top-menu, .master-wrapper-main{
+	width:1240px;
+	margin:0 auto;
+}
+.bottom-1{
+	width:1205px;
+}
+.bottom-2{
+	width:1220px;
 }
 
 /* MASTER PAGE WRAPPERS */
@@ -59,12 +65,20 @@ box-shadow:0 0.5em 2em rgba(0,0,0,0.1);
 */
 }
 
+.master-wrapper-page, .master-wrapper-content{
+	width:1240px;
+}
+
 .master-wrapper-content{
 padding:0;
 text-align:left;
 background:none repeat scroll 0 0;
 }
-.master-wrapper-main{font-family:arial,helvetica,sans-serif;color:#5C5B5B;}
+.master-wrapper-main{
+	font-family:arial,helvetica,sans-serif;
+	color:#5C5B5B;
+	min-width:1240px;
+}
 /* one column master page */
 .master-wrapper-main .center-1{float:left;width:1270px;min-height:400px;padding:10px;background:#FFF;display:inline;border-radius:5px;}
 /* two column master page */
@@ -75,7 +89,7 @@ background:none repeat scroll 0 0;
 .master-wrapper-main .center-3{
 	float:left;
 	padding:10px;
-	min-height:400px;
+	min-height:400px
 	/*
 	padding:10px;
 	margin:10px;
@@ -291,8 +305,9 @@ input.search-box-button{
 	border-top: 1px solid #CCC;
 	clear:both;
 	height:auto;
-	margin:20px 0 0 0;
+	margin:20px auto;
 	padding:0;
+	width:1240px;
 	background:none repeat scroll 0 0 #FFFFFF;
 }
 .footer a{text-decoration:none;color:#555555;}
@@ -493,7 +508,7 @@ td.fieldname{font-size:12px;}
 	font-weight:normal;
 }
 .block li{
-	background:url("images/bullet-right.gif") no-repeat left 8px;
+	/*background:url("images/bullet-right.gif") no-repeat left 8px;*/
 	list-style:none outside none;
 	line-height:18px;
 	padding:4px 1px 3px 13px;
@@ -1677,6 +1692,7 @@ ul.topbar-info li a{
 
 .slider-wrapper{
 	position:relative;
+	width:707px;
 }
 /*.slider-wrapper a img{
 	width:707px;
@@ -1837,6 +1853,8 @@ ul.topbar-info li a{
 
 .most-popular{
 	position:relative;
+	width:707px;
+	max-height:178px;
 }
 .most-popular div{
 	position:relative;
@@ -1849,6 +1867,7 @@ ul.topbar-info li a{
 	margin:0;
 	display:block;
 	float:left;
+	max-height:178px;
 }
 .most-popular h2{
 	position:absolute;
@@ -1885,6 +1904,7 @@ ul.topbar-info li a{
 .right-bar{
 	padding-top:10px;
 	float:right;
+	width:313px;
 }
 .right-bar div{
 	position:relative;

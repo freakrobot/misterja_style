@@ -34,6 +34,38 @@
 			$(right_div).children('ul').eq(index).show();
 		},
 		
+		subItem: function (show_div) 
+		{	
+			var tabs = $(this);
+			
+			$(tabs).children("li").each(function (index) {
+                $(this).mouseover( function () {
+					//$(this).parent().children().children("a").attr("class", "");
+					$(show_div).show();
+					$(this).parent().children('li').removeClass("cur-item");
+                    $(this).addClass('cur-item');
+                    $(show_div).children('div').hide().eq(index).show();
+                });
+				$(this).mouseout( function () {
+					$(show_div).hide();
+					$(this).removeClass("cur-item");
+				});
+            });
+			
+        },
+		subItemInit: function(show_div,index)
+		{
+			//alert("Welcome i.ndex=" + index);
+			var tabs = $(this);
+			
+			$(show_div).hide();
+			/*
+			$(tabs).children("li").eq(index).removeClass("cur-item").addClass('cur-item');
+			$(show_div).children('div').hide();
+			$(show_div).children('div').eq(index).show();
+			*/
+		},
+		
 		itemHovered: function()
 		{
 			$(this).mouseover(function(){

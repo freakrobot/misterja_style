@@ -85,7 +85,42 @@ background:none repeat scroll 0 0;
 .master-wrapper-main .side-2{float:left;width:210px;margin:10px 0;display:inline;}
 .master-wrapper-main .center-2{float:left;width:1050px;min-height:400px;padding:10px;margin:10px 0 10px 10px;background:#FFF;display:inline;border-radius:5px;}
 /* three column master page */
-.master-wrapper-main .leftside-3{float:left;width:200px;margin:10px 0 0 0;display:inline;}
+.master-wrapper-main .leftside-3{
+	float:left;
+	width:200px;
+	margin:10px 0 0 0;
+	display:inline;
+	position:relative;
+}
+ul.list .cur-item
+{
+	position:relative;
+	background-color:#fff;
+	box-shadow: 0 0 50px rgba(0,0,0,.3);
+}
+.sub-menu{
+	width:395px;
+	height:620px;
+	position:relative;
+	left:200px;
+	top:-621px;
+	z-index:20;
+	background-color:#fff;
+	box-shadow: 0 0 50px rgba(0,0,0,.3);	
+}
+.sub-menu .sub-item-header{
+	padding:20px 0 0 10px;
+}
+.sub-menu .sub-item-header a{
+	border-right:1px solid #999;
+	padding:0 8px;
+	margin-bottom:10px;
+	line-height:200%;
+}
+.sub-menu .sub-item-body{
+	padding-top:40px;
+	text-align:center;
+}
 .master-wrapper-main .center-3{
 	float:left;
 	padding:10px;
@@ -556,6 +591,12 @@ td.fieldname{font-size:12px;}
 	border-bottom:1px solid RGB(200,188,179);
 	font-family:arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
 	background:url("img/list-1.jpg") no-repeat 17px 17px;	
+	
+}
+.block-category-navigation ul.list li.cur-item a{
+	z-index:30;
+	position:relative;
+	background-color:#FFF;
 }
 .block-category-navigation ul.list li.item-2 a{
 	background-image:url("img/list-2.jpg");

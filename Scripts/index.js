@@ -34,25 +34,34 @@
 			$(right_div).children('ul').eq(index).show();
 		},
 		
-		subItem: function (show_div) 
+		subItem: function (show_div)
 		{	
 			var tabs = $(this);
 			
 			$(tabs).children("li").each(function (index) {
-                $(this).mouseover( function () {
-					//$(this).parent().children().children("a").attr("class", "");
-					$(show_div).show();
-					$(this).parent().children('li').removeClass("cur-item");
-                    $(this).addClass('cur-item');
-                    $(show_div).children('div').hide().eq(index).show();
-                });
+                                $(this).mouseover( function () {
+                                        //$(this).parent().children().children("a").attr("class", "");
+                                        var pointer = this;
+                                        $(show_div).show();
+                                        /* keep sub tab display */
+                                        $(show_div).mouseover(function(){
+                                                $(show_div).show();
+                                                $(pointer).parent().children('li').removeClass("cur-item");
+                                                $(pointer).addClass('cur-item');
+                                                $(show_div).children('div').hide().eq(index).show();
+                                            });
+                                        /* keep sub tab display end */
+
+                                        $(this).parent().children('li').removeClass("cur-item");
+                                        $(this).addClass('cur-item');
+                                        $(show_div).children('div').hide().eq(index).show();
+                                });
 				$(this).mouseout( function () {
 					$(show_div).hide();
 					$(this).removeClass("cur-item");
 				});
-            });
-			
-        },
+                        });	
+                },
 		subItemInit: function(show_div,index)
 		{
 			//alert("Welcome i.ndex=" + index);

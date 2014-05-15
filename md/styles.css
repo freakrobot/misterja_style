@@ -583,14 +583,14 @@ td.fieldname{font-size:12px;}
 .block-category-navigation ul.list li a{
 	display:block;
 	margin:0;
-	padding:0 0 0 50px;
+	padding:0 0 0 60px;
 	height:68px;
 	line-height:68px;
 	color:#5B361A;
 	font-weight:bold;
 	border-bottom:1px solid RGB(200,188,179);
 	font-family:arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
-	background:url("img/list-1.jpg") no-repeat 17px 17px;	
+	background:url("../images/list-icon-1.png") no-repeat 10px 13px;
 	
 }
 .block-category-navigation ul.list li.cur-item a{
@@ -599,28 +599,28 @@ td.fieldname{font-size:12px;}
 	background-color:#FFF;
 }
 .block-category-navigation ul.list li.item-2 a{
-	background-image:url("img/list-2.jpg");
+	background-image:url("../images/list-icon-2.png");
 }
 .block-category-navigation ul.list li.item-3 a{
-	background-image:url("img/list-3.jpg");
+	background-image:url("../images/list-icon-3.png");
 }
 .block-category-navigation ul.list li.item-4 a{
-	background-image:url("img/list-4.jpg");
+	background-image:url("../images/list-icon-4.png");
 }
 .block-category-navigation ul.list li.item-5 a{
-	background-image:url("img/list-5.jpg");
+	background-image:url("../images/list-icon-5.png");
 }
 .block-category-navigation ul.list li.item-6 a{
-	background-image:url("img/list-6.jpg");
+	background-image:url("../images/list-icon-6.png");
 }
 .block-category-navigation ul.list li.item-7 a{
-	background-image:url("img/list-7.jpg");
+	background-image:url("../images/list-icon-7.png");
 }
 .block-category-navigation ul.list li.item-8 a{
-	background-image:url("img/list-8.jpg");
+	background-image:url("../images/list-icon-8.png");
 }
 .block-category-navigation ul.list li.item-9 a{
-	background-image:url("img/list-9.jpg");
+	background-image:url("../images/list-icon-9.png");
 }
 
 .block-manufacturer-navigation .listbox .view-all a{color:#5C5B5B;font-weight:700;}

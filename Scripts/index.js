@@ -61,6 +61,10 @@
 					$(this).removeClass("cur-item");
 				});
                         });	
+			$(show_div).mouseout( function () {
+					$(show_div).hide();
+					$(this).parent().parent().find('.list').children('li').removeClass("cur-item");
+				});
                 },
 		subItemInit: function(show_div,index)
 		{

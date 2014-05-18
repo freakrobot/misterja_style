@@ -88,6 +88,7 @@ background:none repeat scroll 0 0;
 .master-wrapper-main .leftside-3{
 	float:left;
 	width:200px;
+	height:623px;
 	margin:10px 0 0 0;
 	display:inline;
 	position:relative;
@@ -2111,6 +2112,7 @@ ul.bottm-1-nav{
 	transform:perspective(300px) rotateX(-90deg);
 	transform-origin:50% 100%;
 	transition:all .35s;
+	opacity:0.8;
 }
 .bottom-1-content li .item-ext a.item-info{
 	display:block;

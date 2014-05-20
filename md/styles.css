@@ -2266,3 +2266,139 @@ border:1px solid #000;
 }
 */
 
+
+/* list.html */
+
+.center-main{
+	float:right;
+	width:1025px;
+}
+.breadcrumb{
+	border-bottom:1px solid #ccc;	
+	height:67px;
+	line-height:67px;
+}
+
+.breadcrumb a{
+	font-size:16px;
+	font-weight:bold;
+}
+.breadcrumb a:hover{
+	text-decoration:none;
+	cursor:pointer;
+}
+.list-hot{
+	height:200px;
+}
+.list-hot li{
+	float:left;
+	border:1px solid #b3b3b3;
+	width:187px;
+	height:187px;
+	background-color:#E6E6E6;
+	margin:10px 20px 0 0;
+	position:relative;
+}
+
+.list-hot img{
+	width:35px;
+	height:35px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.list-items{
+	clear:both;
+	border-top:1px solid #ccc;
+	margin-top:20px;
+	padding-top:20px;
+}
+.list-items li{
+	float:left;
+	width:210px;
+	margin-right:32px;
+	margin-bottom:20px;
+	padding:10px;
+	border:1px solid #b3b3b3;
+	background-color:#FFF;
+}
+.list-items li a img{
+	width:210px;
+	height:210px;
+}
+.item-price{
+	color:#666;
+	font-size:13px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
+.item-price span{
+	padding:0 10px;
+}
+.item-price label{
+	background-color:#D63C38;
+	padding:5px;
+	color:#fff;
+	border-radius:3px;
+}
+.item-comment-count{
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+.item-comment-count span{
+	color:#80C0DD;	
+}
+.item-comment-count img{
+	width:23px;
+	height:20px;
+	margin-bottom:-5px;
+}
+.item-exts{
+	text-align:center;
+	height:50px;
+}
+.item-exts a, .item-exts span{
+	display:block;
+	float:left;
+	padding:5px 10px;
+	border-radius:3px;
+	margin:4px 10px 4px 7px;
+	background-color:#CCCCCC;
+}
+.item-exts a:hover{
+	color:#fff;
+	text-decoration:none;
+	background-color:#D63C38;
+}
+.list-hot li.right-margin-none, .list-items li.right-margin-none{
+	margin-right:0;
+}
+
+.leftside-4{
+	clear:left;
+	float:left;
+	width:200px;
+}
+.popular-list, .recently-list{
+	padding-top:20px;
+}
+.popular-list h2, .recently-list h2{
+	height:36px;
+	line-height:36px;
+	padding-left:40px;
+	font-size:16px;
+	color:#FFF;
+	background:#5B361A url(../images/cat-icon.png) no-repeat 3px center;
+}
+.popular-list h2{
+	background-image:url(../images/popular-weekly-icon.png);
+}
+
+
+
+
+
+
+

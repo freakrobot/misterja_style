@@ -2382,6 +2382,7 @@ border:1px solid #000;
 	width:200px;
 }
 .popular-list, .recently-list{
+	clear:both;
 	padding-top:20px;
 }
 .popular-list h2, .recently-list h2{
@@ -2395,10 +2396,148 @@ border:1px solid #000;
 .popular-list h2{
 	background-image:url(../images/popular-weekly-icon.png);
 }
+.popular-list li{
+	padding:15px 0 0 0;
+}
+.popular-list a{
+	display:block;
+}
+.popular-list a.item-info{
+	height:30px;
+	font-size:13px;
+	line-height:130%;
+	overflow:hidden;
+}
+.popular-list a.item-image{
+	float:left;
+	margin-right:10px;
+}
+.popular-list a.item-image img{
+	width:50px;
+	height:50px;
+}
+.popular-list span{
+	display:block;
+	font-size:13px;
+	font-weight:bold;
+	color:#D63C38;
+	height:20px;
+	line-height:25px;
+}
+.recently-list li{
+	padding-top:8px;
+}
+.recently-list a img{
+	max-width:200px;
+}
+.recently-list a, .recently-list span{
+	display:block;
+	text-align:center;
+	padding:5px 5px 0 5px;
+	line-height:135%;
+}
+.recently-list a.item-info{
+	overflow:hidden;
+	height:35px;
+}
 
 
-
-
-
-
-
+/* 购物车页面 cats.html*/
+#cats-page{
+	clear:both;
+	margin-top:20px;
+	width:100%;
+	border-top:1px solid #F3DACC;
+}
+ul.jindu{
+	width:450px;
+	height:80px;
+	margin:30px auto;
+	position:relative;
+	background:url(../images/jindu-1.png) no-repeat center center;
+}
+ul.jindu li{
+	position:absolute;
+	top:0;
+	font-size:14px;	
+	font-weight:bold;
+	color:#B3B3B3;
+	left:10px;
+}
+ul.jindu li.current{
+	color:#333;
+}
+ul.jindu .item-2{
+	left:195px;
+}
+ul.jindu .item-3{
+	left:390px;
+}
+.cats-main{
+	width:1100px;
+	margin:0 auto;
+}
+table{
+	width:100%;
+}
+table thead{
+	background-color:#EFA420;
+	height:35px;
+	line-height:35px;
+	font-size:14px;
+	font-weight:bold;
+	
+	color:#FFF;
+}
+table thead td{
+	border-right:1px solid #FFF;
+}
+table tbody tr{
+	height:150px;
+	line-height:100px;
+	font-weight:bold;
+	border-bottom:1px solid #B3B3B3;
+}
+table input{
+	width:60px;
+	padding:2px;
+	margin-bottom:10px;
+	text-align:center;
+}
+table a.plus, table a.minus{
+	font-size:24px;
+	padding:0 8px;
+}
+table a:hover{
+	cursor:pointer;
+	text-decoration:none;
+}
+table td.baozhi{
+	width:150px;
+}
+table td.cnt{
+	width:150px;
+}
+.cat-bottom{
+	height:50px;
+	line-height:50px;
+	text-align:left;
+	margin-top:20px;
+	padding-right:20px;
+}
+.cat-bottom span{
+	font-size:16px;
+	font-weight:bold;
+}
+.cat-bottom input{
+	padding:3px;
+	margin-bottom:8px;
+}
+.cat-bottom strong, .cat-bottom strong span {
+	display:block;
+	float:right;
+	font-size:32px;
+}
+.cat-bottom strong label{
+	margin-right:30px;
+}

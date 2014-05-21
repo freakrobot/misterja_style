@@ -8,78 +8,12 @@
 
 <script src="Scripts/jquery-1.10.2.min.js"></script>
 
-<script src="Scripts/jquery.event.move.js"></script>
-<script src="Scripts/jquery.event.swipe.js"></script>
-<script src="Scripts/unslider.min.js"></script>
-
 <script src="Scripts/index.js"></script>
 <script type="application/javascript">
 	$(document).ready(function () {
-		$("#chosen-catalog").bm2Tabs(".bottom-1-content");
-		$("#chosen-catalog").bm2TabInit(".bottom-1-content",0);
-		
-		$("#drink-catelog").bm2Tabs(".bottom-2-content");
-		$("#drink-catelog").bm2TabInit(".bottom-2-content",0);
-		
-		$("#snake-catelog").bm2Tabs(".bottom-2-content");
-		$("#snake-catelog").bm2TabInit(".bottom-2-content",1);
 		
 		$("ul.list").subItem(".sub-menu");
 		$("ul.list").subItemInit(".sub-menu",0);
-		
-		$(".bottom-1-content > ul > li").itemHovered();
-		
-		if(window.chrome) {
-		   $('.banner li').css('background-size', '100% 100%');
-		 }
-
-		// for image slider
-		 $('.banner').unslider({
-		   //arrows: false,
-		   fluid: true,
-		   dots: true
-		 });
-	
-		 //  Find any element starting with a # in the URL
-		 //  And listen to any click events it fires
-		 $('a[href^="#"]').click(function() {
-		   //  Find the target element
-		   var target = $($(this).attr('href'));
-	
-		   //  And get its position
-		   var pos = target.offset(); // fallback to scrolling to top || {left: 0, top: 0};
-	
-		   //  jQuery will return false if there's no element
-		   //  and your code will throw errors if it tries to do .offset().left;
-		   if(pos) {
-		 //  Scroll the page
-		 $('html, body').animate({
-		   scrollTop: pos.top,
-		   scrollLeft: pos.left
-		 }, 1000);
-		   }
-	
-		   //  Don't let them visit the url, we'll scroll you there
-		   return false;
-		 });
-	
-		 // var GoSquared = {acct: 'GSN-396664-U'};
-		 var unslider = $('.banner').unslider();
-		 $('.unslider-arrow').click(function() {
-		   var fn = this.className.split(' ')[1];
-	
-		   //  Either do unslider.data('unslider').next() or .prev() depending on the className
-		   unslider.data('unslider')[fn]();
-		 });
-	
-		 $('.banner').mouseover(function() {
-		   $('.unslider-arrow').show();
-		 });
-		 $('.banner').mouseout(function() {
-		   $('.unslider-arrow').hide();
-		 });
-		 // end of image slider
-
 	});
 		
 </script>
@@ -423,10 +357,32 @@
                 <div class="leftside-4">
                 	<div class="popular-list">
                     	<h2>一周销量排行</h2>
+                        <ul>
+                        	<li>
+                            	<a class="item-image"><img src="images/dilu.jpg"></a>
+                                <a class="item-info">三只松鼠碧根果210g×3包长寿果奶油味美国山核桃</a>
+                                <span>￥13.4</span>
+                            </li>
+                            <li>
+                            	<a class="item-image"><img src="images/dilu.jpg"></a>
+                                <a class="item-info">三只松鼠碧根果210g×3包长寿果奶油味美国山核桃</a>
+                                <span>￥13.4</span>
+                            </li>
+                        </ul>
                     </div>
                     
                     <div class="recently-list">
                     	<h2>最近浏览</h2>
+                        <ul>
+                        	<li>
+                            	<a class="item-image"><img src="images/left4-item-img.jpg"></a>
+                                <a class="item-info">三只松鼠碧根果210g×3包长寿果奶油味美国山核桃</a>
+                            </li>
+                            <li>
+                            	<a class="item-image"><img src="images/left4-item-img.jpg"></a>
+                                <a class="item-info">三只松鼠碧根果210g×3包长寿果奶油味美国山核桃</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>               
                 <div class="clear-space">

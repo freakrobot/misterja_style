@@ -5,6 +5,69 @@
 <title>MisterJa★亚洲精选</title>
 <link href="md/styles.css" rel="stylesheet" type="text/css">
 
+<script src="Scripts/jquery-1.10.2.min.js"></script>
+
+<script>  
+
+jQuery(function($){
+	var total_price=0;
+	$(this).find("tbody").find("tr").each( function(index) {
+		var tr_price=$(this).find(".xiaoji").children("span").text();
+		total_price+=parseInt(tr_price);
+	})
+	$(this).find(".total-price").text(total_price);
+		
+		
+    $(".remove-icon").click(function() {
+		$(this).parent().parent().children(".xiaoji").children("span").text(0);
+		var total_price=0;
+		$(this).parents("tbody").find("tr").each( function(index) {
+			var tr_price=$(this).find(".xiaoji").children("span").text();
+			total_price+=parseInt(tr_price);
+		})
+		$(this).parents(".cats-main").find(".total-price").text(total_price);
+    	$(this).parents("tr").remove();
+   	});
+   
+   	$(".minus").click( function() {
+		//alert("test");
+		var qua=$(this).parent().children("input").val();
+		if (qua > 0)
+		{
+			qua--;
+		}
+		$(this).parent().children("input").val(qua);
+		var s_price=$(this).parent().parent().children(".price").children("span").text();
+		var t_price=s_price*qua;
+		$(this).parent().parent().children(".xiaoji").children("span").text(t_price);
+		
+		var total_price=0;
+		$(this).parents("tbody").find("tr").each( function(index) {
+			var tr_price=$(this).find(".xiaoji").children("span").text();
+			total_price+=parseInt(tr_price);
+		})
+		$(this).parents(".cats-main").find(".total-price").text(total_price);
+	});
+	$(".plus").click( function() {
+		//alert("test");
+		var qua=$(this).parent().children("input").val();
+		qua++;
+		$(this).parent().children("input").val(qua);
+		var s_price=$(this).parent().parent().children(".price").children("span").text();
+		var t_price=s_price*qua;
+		$(this).parent().parent().children(".xiaoji").children("span").text(t_price);
+		
+		var total_price=0;
+		$(this).parents("tbody").find("tr").each( function(index) {
+			var tr_price=$(this).find(".xiaoji").children("span").text();
+			total_price+=parseInt(tr_price);
+		})
+		$(this).parents(".cats-main").find(".total-price").text(total_price);
+	});
+   
+})
+</script>
+
 </head>
 
 <body>
@@ -95,26 +158,37 @@
                     </thead>
                     <tbody>
                     	<tr>
-                        	<td class="remove"><a><img src="images/remove.png"></a></td>
+                        	<td class="remove"><a class="remove-icon"><img src="images/remove.png"></a></td>
                             <td class="image"><a><img src="images/left4-item-img.jpg"></a></td>
-                            <td class="price">€1.57</td>
+                            <td class="price">€<span>15</span></td>
                             <td class="baozhi">2014-12-19 00:00</td>
-                            <td class="cnt"><a class="minus">-</a><input type="text" class="quantity-text" value="1"><a class="plus">+</a></td>
-                            <td class="xiaoji">€1.57</td>
+                            <td class="cnt">
+                            	<a class="minus" onselectstart="return false;">-</a>
+                                <input type="text" class="quantity-text" value="1">
+                                <a class="plus" onselectstart="return false;">+</a>
+                            </td>
+                            <td class="xiaoji">€<span>15</span></td>
                         </tr>
                         <tr>
-                        	<td class="remove"><a><img src="images/remove.png"></a></td>
+                        	<td class="remove"><a class="remove-icon"><img src="images/remove.png"></a></td>
                             <td class="image"><a><img src="images/left4-item-img.jpg"></a></td>
-                            <td class="price">€23</td>
+                            <td class="price">€<span>23</span></td>
                             <td class="baozhi">2014-12-19 00:00</td>
-                            <td class="cnt"><a class="minus">-</a><input type="text" class="quantity-text" value="1"><a class="plus">+</a></td>
-                            <td class="xiaoji">€23</td>
+                            <td class="cnt">
+                            	<a class="minus" onselectstart="return false;">-</a>
+                                <input type="text" class="quantity-text" value="10">
+                                <a class="plus" onselectstart="return false;">+</a>
+                            </td>
+                            <td class="xiaoji">€<span>230</span></td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="cat-bottom">
                 	<span>使用折扣券：</span><input type="text" class="sales">
-                    <strong><label>购物金额总计：</label>€<span>100</span></strong>
+                    <strong><label>购物金额总计：</label>€<span class="total-price">100</span></strong>
+                </div>
+                <div>
+                	<a class="jiesuan">去结算</a>
                 </div>
             </div>
     	</div>

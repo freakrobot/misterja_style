@@ -2588,18 +2588,18 @@ table tbody tr{
 	font-weight:bold;
 	border-bottom:1px solid #B3B3B3;
 }
-table input{
+table input, .p-intro input{
 	width:60px;
 	padding:2px;
 	margin-bottom:10px;
 	text-align:center;
 }
-table a.plus, table a.minus{
+a.plus, a.minus{
 	font-size:24px;
 	padding:0 8px;
 	-moz-user-select:none;
 }
-table a:hover{
+table a:hover, a.plus:hover, a.minus:hover{
 	cursor:pointer;
 	text-decoration:none;
 }
@@ -2649,4 +2649,139 @@ table td.cnt{
 	text-align:left;
 	border-radius:4px;
 	background:#EFA420 url(../images/cats-icon.png) no-repeat 10px center;
+}
+
+/* product.html */
+
+.p-preview{
+	width:450px;
+	float:left;
+}
+.p-bigview{
+	height:350px;
+	text-align:center;
+	background-color:#fff;
+	border:1px solid #ccc;
+}
+.zoomPad{
+	text-align:center;
+	display:block;
+	margin:0 0 0 50px;
+}
+ul#thumblist{
+	padding-top:6px;
+	display:block;
+}
+ul#thumblist li{
+	float:left;
+	margin-right:6px;
+	list-style:none;
+}
+ul#thumblist li.margin-right-none{
+	margin-right:0;
+}
+ul#thumblist li a{
+	display:block;
+	border:1px solid #CCC;
+}
+ul#thumblist li a.zoomThumbActive{
+    border:1px solid red;
+}
+ul#thumblist li a img{
+	width:144px;
+}
+.jqzoom{
+	text-decoration:none;
+	float:left;
+}
+
+.p-right{
+	width:550px;
+	float:right;
+}
+.p-intro h2{
+	margin:0px 0 10px 0;
+	padding:5px;
+	line-height:150%;
+	color:#666;
+}
+.p-intro h2 span{
+	color:#DB3216;
+}
+.p-intro h2.p-info{
+	color:#3E3A39;
+	background-color:#D8DADA;
+}
+.p-intro h3{
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	clear:both;
+}
+.p-intro input{
+	width:40px;
+	margin-bottom:6px;
+}
+.p-intro label{
+	display:block;
+	float:left;
+}
+.p-intro span.star{
+	width:127px;
+	height:35px;
+	display:block;
+	float:left;
+}
+.p-intro span.star4{
+	background:url(../images/star4.png) no-repeat left center;
+}
+.p-bottom{
+	padding-top:30px;
+}
+.p-intro a.add-cat, .p-intro a.add-focus{
+	display:block;
+	background:#E8553C url(../images/cats-icon.png) no-repeat 10px center;
+	height:40px;
+	float:left;
+	line-height:40px;
+	border-radius:4px;
+	color:#fff;
+	font-size:16px;
+	font-family:"microsoft yahei", Geneva, sans-serif;
+	font-weight:bold;
+	margin-right:20px;
+	padding:0 10px 0 50px;
+}
+.p-intro a.add-focus{
+	padding-left:40px;
+	background-image:url(../images/add-focus.png);
+}
+.p-detail{
+	clear:both;
+	padding-top:20px;
+	font-size:14px;
+}
+.p-detail-list, .p-more{
+	padding:10px;
+	background-color:#CCC;
+	border:1px solid #FFF;
+}
+.p-detail-list li{
+	display:block;
+	float:left;
+	width:328px;
+	color:#000;
+	line-height:150%;
+	padding:3px;
+}
+.p-detail-list li.p-list-intro{
+	float:none;
+}
+.p-detail-list li.clear-space{
+	float:none;
+	clear:left;
+}
+.p-more{
+	margin-top:10px;
+	height:400px;
 }
